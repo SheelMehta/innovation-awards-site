@@ -2,208 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Innovation Gallery</title>
+  <title>Innovation Awards – Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #2e1065, #9333EA);
       font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #2e1065, #9333EA);
       color: white;
+      padding: 80px 20px;
       text-align: center;
+      min-height: 100vh;
     }
+
     h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 36px;
-      margin: 40px 0 20px;
+      font-size: 48px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
-    .toolbar {
-      margin-bottom: 20px;
+
+    h2 {
+      font-weight: normal;
+      font-size: 20px;
+      color: #ddd;
+      margin-bottom: 40px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .button-row {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0 50px;
     }
-    .tag-filter {
-      padding: 8px 14px;
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      color: white;
-      border-radius: 20px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .tag-filter.active {
-      background: #14b8a6;
-      color: black;
-    }
-    .surprise {
+
+    .btn {
       background: #5eead4;
       color: #1e1b4b;
-      border: none;
-      padding: 8px 16px;
+      padding: 14px 26px;
+      font-size: 16px;
       font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding-bottom: 60px;
-    }
-    .card {
-      background: rgba(255,255,255,0.08);
-      padding: 20px;
-      width: 280px;
-      border-radius: 16px;
-      box-shadow: 0 6px 30px rgba(0,0,0,0.3);
-      text-align: left;
+      border-radius: 10px;
+      text-decoration: none;
       transition: transform 0.3s ease;
     }
-    .card:hover {
-      transform: scale(1.03);
-      background: rgba(255,255,255,0.12);
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #99f6e4;
     }
-    .card h2 {
+
+    .intro {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .portrait-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .portrait-block {
+      max-width: 240px;
+    }
+
+    .portrait-block img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 10px;
+    }
+
+    .portrait-block h3 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 22px;
-      margin: 0 0 10px 0;
+      font-size: 18px;
+      margin: 10px 0 0;
       color: #5eead4;
     }
-    .card p {
-      font-size: 15px;
-      margin: 0;
-      line-height: 1.4;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      background: #5eead4;
-      color: #1e1b4b;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-    .tags {
-      margin-top: 12px;
+
+    .credits {
       display: flex;
-      gap: 8px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
     }
-    .tag {
-      background: rgba(20, 184, 166, 0.15);
-      border: 1px solid #14b8a6;
-      color: #99f6e4;
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 500;
+
+    .credit-box {
+      background: rgba(255, 255, 255, 0.07);
+      border-left: 6px solid #5eead4;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: left;
+      width: 260px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .credit-box h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #5eead4;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #bbbbbb;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <h1>🧠 Innovation Gallery</h1>
 
-  <div class="toolbar">
-    <button class="tag-filter" onclick="toggleTag('All')">All</button>
-    <button class="tag-filter" onclick="toggleTag('AI')">AI</button>
-    <button class="tag-filter" onclick="toggleTag('Fashion')">Fashion</button>
-    <button class="tag-filter" onclick="toggleTag('Agriculture')">Agriculture</button>
-    <button class="tag-filter" onclick="toggleTag('Sustainability')">Sustainability</button>
-    <button class="tag-filter" onclick="toggleTag('Health Tech')">Health Tech</button>
-    <button class="tag-filter" onclick="toggleTag('Automation')">Automation</button>
-    <button class="tag-filter" onclick="toggleTag('Rural Innovation')">Rural Innovation</button>
-    <button class="tag-filter" onclick="toggleTag('Recycling')">Recycling</button>
-    <button class="surprise" onclick="surpriseMe()">🎲 Surprise Me</button>
+  <div class="container">
+    <h1>Innovation Awards</h1>
+    <h2>India's Boldest Ideas Start Small</h2>
+
+    <div class="button-row">
+        <a class="btn" href="ideas.html">🚀 Dive into the Ideas</a>
+        <a class="btn" href="map.html">📍 See Where They Come From</a>        
+    </div>
+
+    <p class="intro">
+      Across the country, young minds are turning curiosity into invention. The Innovation Awards recognize original, practical solutions 
+      developed by school students — ideas born not in labs, but in classrooms, homes, farms, and workshops. This initiative is powered by 
+      <strong>GIAN</strong>, the <strong>Honey Bee Network</strong>, and <strong>SRISTI</strong>, all of whom have spent decades making sure that local innovations aren't overlooked.
+    </p>
+
+    <div class="portrait-row">
+        <div class="portrait-block">
+          <img src="images/dr.kalam.jpg" alt="Dr. A.P.J. Abdul Kalam">
+          <h3>Dr. A.P.J. Abdul Kalam</h3>
+        </div>
+        <div class="portrait-block">
+          <img src="images/dr.gupta.jpg" alt="Prof. Anil K. Gupta">
+          <h3>Prof. Anil K. Gupta</h3>
+        </div>
+      </div>      
+
+    <p>
+      This platform draws inspiration from pioneers who believed in students, simplicity, and scientific courage. Their work continues to guide how we 
+      support a new generation of creators.
+    </p>
+
+    <div class="credits">
+      <div class="credit-box">
+        <h4>Dr. A.P.J. Abdul Kalam</h4>
+        <p>Scientist, President, and eternal champion of youth and knowledge. His vision continues to push young minds to dream big and build for others.</p>
+      </div>
+      <div class="credit-box">
+        <h4>Prof. Anil K. Gupta</h4>
+        <p>Founder of the Honey Bee Network and longtime advocate of grassroots innovation and inclusive recognition of knowledge.</p>
+      </div>
+    </div>
+
   </div>
 
-  <div class="grid" id="cardGrid">
-    
-    <div class="card" data-tags="Sustainability">
-      <h2>G.LED Bulb</h2>
-      <p>G.LED is a repairable LED bulb that reduces waste and cost by letting users replace only the light cartridge, not the whole bulb.</p>
-      <div class="tags"><span class='tag'>Sustainability</span></div>
-      <a href="idea_pages/idea_01.html" target="_blank">Explore Idea →</a>
-    </div>
-    
-    <div class="card" data-tags="Health Tech">
-      <h2>3rDi 4 All</h2>
-      <p>A voice-interactive Android app for the blind that uses ARCore and Depth API to provide real-time indoor navigation and obstacle alerts through auditory cues.</p>
-      <div class="tags"><span class='tag'>Health Tech</span></div>
-      <a href="idea_pages/idea_02.html" target="_blank">Explore Idea →</a>
-    </div>
-    
-    <div class="card" data-tags="AI Automation">
-      <h2>Remote Lane Reversal System</h2>
-      <p>A Portable Solution for Efficient Traffic Management and Decongestion</p>
-      <div class="tags"><span class='tag'>AI</span><span class='tag'>Automation</span></div>
-      <a href="idea_pages/idea_03.html" target="_blank">Explore Idea →</a>
-    </div>
-    
-    <div class="card" data-tags="AI Rural Innovation">
-      <h2>CodeBhasha</h2>
-      <p>CodeBhasha is an Android app that enables children to learn computer coding in their native language, starting with Malayalam, without needing English or expensive computers.</p>
-      <div class="tags"><span class='tag'>AI</span><span class='tag'>Rural Innovation</span></div>
-      <a href="idea_pages/idea_04.html" target="_blank">Explore Idea →</a>
-    </div>
-    
-    <div class="card" data-tags="Health Tech Automation">
-      <h2>DextraBot</h2>
-      <p>Empowering Lives with Affordable Tremor-Assistive Technology and AIEnhanced Insights</p>
-      <div class="tags"><span class='tag'>Health Tech</span><span class='tag'>Automation</span></div>
-      <a href="idea_pages/idea_05.html" target="_blank">Explore Idea →</a>
-    </div>
-    
-  </div>
-
-  <script>
-    let activeTags = new Set();
-
-    function toggleTag(tag) {
-      if (tag === "All") {
-        activeTags.clear();
-        document.querySelectorAll(".tag-filter").forEach(b => b.classList.remove("active"));
-      } else {
-        const btn = document.querySelector(`.tag-filter[onclick*="${tag}"]`);
-        if (activeTags.has(tag)) {
-          activeTags.delete(tag);
-          btn.classList.remove("active");
-        } else {
-          activeTags.add(tag);
-          btn.classList.add("active");
-        }
-      }
-      applyFilter();
-    }
-
-    function applyFilter() {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        const tags = card.getAttribute('data-tags');
-        const matches = Array.from(activeTags).some(tag => tags.includes(tag));
-        if (activeTags.size === 0 || matches) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
-    }
-
-    function surpriseMe() {
-      const visibleCards = Array.from(document.querySelectorAll('.card'))
-        .filter(card => card.style.display !== "none");
-      if (visibleCards.length === 0) return;
-      const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
-      const link = randomCard.querySelector("a").href;
-      window.open(link, "_blank");
-    }
-  </script>
 </body>
 </html>
