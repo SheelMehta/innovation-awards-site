@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>3rDi 4 All</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #2e1065, #9333EA);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      padding: 80px 20px;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .tagline {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      position: fixed;
+      top: 80px;
+      left: 10px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 52px;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .tab-button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .tab-button.active {
+      background: #facc15;
+      color: #1e1b4b;
+    }
+    .tab-content {
+      display: none;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      position: relative;
+      padding: 40px 30px;
+      border-radius: 16px;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      font-size: 20px;
+      text-align: left;
+    }
+    .card.problem {
+      background: rgba(0,0,0,0.4);
+      border-left: 8px solid #ef4444;
+    }
+    .card.problem::before {
+      content: "✖";
+      position: absolute;
+      font-size: 120px;
+      color: rgba(255, 255, 255, 0.05);
+      top: 10px;
+      left: 20px;
+    }
+    .card.solution {
+      background: rgba(255,255,255,0.07);
+      border-left: 8px solid #facc15;
+    }
+    .card.solution::before {
+      content: "✔";
+      position: absolute;
+      font-size: 120px;
+      color: rgba(255, 255, 255, 0.05);
+      top: 10px;
+      right: 20px;
+    }
+    .card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .card p {
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>3rDi 4 All</h1>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('idea')">💡 Idea</button>
+    <button class="tab-button" onclick="showTab('innovator')">👤 Innovator</button>
+    <button class="tab-button" onclick="showTab('learn')">📘 Learn More</button>
+  </div>
+  <div id="tab-idea" class="tab-content" style="display:block;">
+    <div class="card problem">
+      <h2>The Problem</h2>
+      <p>Blind users struggle to navigate large indoor spaces like malls or hospitals because GPS doesn’t work indoors and traditional tools lack obstacle detection.</p>
+    </div>
+    <div class="card solution">
+      <h2>The Solution</h2>
+      <p>A voice-based navigation app that uses ARCore and Depth API to guide visually impaired users through indoor spaces with real-time audio and obstacle alerts.</p>
+    </div>
+  </div>
+  <div id="tab-innovator" class="tab-content">
+    <div class="card">
+      <h2>👤 Udayshankar Ravikumar</h2>
+      <p><strong>🎓 Class:</strong> 9</p>
+      <p><strong>🏫 School:</strong> Nalanda Public School, Thammanam</p>
+      <p><strong>📍 City:</strong> Thammanam</p>
+      <p><strong>🗺️ State:</strong> Kerala</p>
+    </div>
+  </div>
+  <div id="tab-learn" class="tab-content">
+    <div class="card">
+      <h2>📘 Learn More</h2>
+      <p>This idea revolves around developing a voice-interactive indoor navigation smartphone application specifically designed for visually impaired individuals. Currently, blind people often depend on others for assistance while navigating unfamiliar indoor environments such as hospitals, airports, train stations, government offices, and shopping malls. This application aims to empower them with independent, safe, and accurate navigation using their smartphones.</p><p>The app, called 3rDi 4 All, uses voice commands to interact with the user and offers turn-by-turn navigation to reach desired locations within a building. It responds to queries like "Take me to the washroom" and then provides real-time auditory instructions such as "Turn left in 10 steps" or "Elevator ahead on your right." What makes this different from regular navigation apps is its focus on indoor environments where GPS is not reliable, and where small obstacles and environmental details matter a lot more to blind users.</p><p>To implement this, the app leverages Google ARCore and Cloud Anchors to map and track the indoor environment. This technology allows for highly accurate indoor localization and routing. Additionally, the app uses Depth API to detect nearby obstacles in real-time, warning the user audibly if something blocks the path, like a chair, steps, or a person.</p><p>Built using Unity, this cross-platform tool allows for future upgrades and expansion to different types of buildings and spaces. With the inclusion of metadata such as location of elevators, ramps, and stairs, the app ensures that navigation is not only possible but also context-aware and tailored to the specific needs of blind individuals.</p><p>In short, this app represents a powerful blend of assistive technology and augmented reality, giving blind users the confidence and independence to navigate complex indoor spaces without relying on others.</p><p></p><p></p><p></p><p></p>
+    </div>
+  </div>
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+      document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
+      document.getElementById('tab-' + id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

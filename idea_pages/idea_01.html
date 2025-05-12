@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>G.LED Bulb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #2e1065, #9333EA);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      padding: 80px 20px;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .tagline {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      position: fixed;
+      top: 80px;
+      left: 10px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 52px;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .tab-button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .tab-button.active {
+      background: #facc15;
+      color: #1e1b4b;
+    }
+    .tab-content {
+      display: none;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      position: relative;
+      padding: 40px 30px;
+      border-radius: 16px;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      font-size: 20px;
+      text-align: left;
+    }
+    .card.problem {
+      background: rgba(0,0,0,0.4);
+      border-left: 8px solid #ef4444;
+    }
+    .card.problem::before {
+      content: "✖";
+      position: absolute;
+      font-size: 120px;
+      color: rgba(255, 255, 255, 0.05);
+      top: 10px;
+      left: 20px;
+    }
+    .card.solution {
+      background: rgba(255,255,255,0.07);
+      border-left: 8px solid #facc15;
+    }
+    .card.solution::before {
+      content: "✔";
+      position: absolute;
+      font-size: 120px;
+      color: rgba(255, 255, 255, 0.05);
+      top: 10px;
+      right: 20px;
+    }
+    .card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .card p {
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>G.LED Bulb</h1>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('idea')">💡 Idea</button>
+    <button class="tab-button" onclick="showTab('innovator')">👤 Innovator</button>
+    <button class="tab-button" onclick="showTab('learn')">📘 Learn More</button>
+  </div>
+  <div id="tab-idea" class="tab-content" style="display:block;">
+    <div class="card problem">
+      <h2>The Problem</h2>
+      <p>LED bulbs are built to last 20 years — but we throw them away when a tiny internal chip fails. The rest of the bulb — durable plastic and aluminum — ends up as waste, because the casing is sealed and unrepairable.</p>
+    </div>
+    <div class="card solution">
+      <h2>The Solution</h2>
+      <p>G.LED rethinks the light bulb: a reusable body, a cap, and a chip cartridge that anyone can replace. No tools. No trash. Just slide in a new chip and the bulb works like new.</p>
+    </div>
+  </div>
+  <div id="tab-innovator" class="tab-content">
+    <div class="card">
+      <h2>👤 Aditya Raj Chopra</h2>
+      <p><strong>🎓 Class:</strong> 10</p>
+      <p><strong>🏫 School:</strong> DPS Indirapuram, Ghaziabad</p>
+      <p><strong>📍 City:</strong> Ghaziabad</p>
+      <p><strong>🗺️ State:</strong> Uttar Pradesh</p>
+    </div>
+  </div>
+  <div id="tab-learn" class="tab-content">
+    <div class="card">
+      <h2>📘 Learn More</h2>
+      <p>LED bulbs and lights have 90% of their body by weight
+made up of plastic and aluminum having a life of more
+than 20 years. The rest 10% is the Lightning component
+PCBA-LED (Printed Circuit Board Assembly -with- Light
+Emitting Diodes). Whenever a LED bulb fails, it is only this
+PCBA-LED of the bulb that is required to be changed for a
+new one. Unfortunately, all these failed bulbs enter the
+garbage. As these LED bulbs have all their parts glued,
+soldered, screwed, and machine pressed, making them
+impossible to be economically repaired.</p><p>My Innovative G.LED bulb has only 3 assembly parts.
+Reusable Bulb body with Diffuser cap, and Replaceable
+PCBA-LED-Cartridge. Every time the LED bulb fails, just
+remove the PCBA-LED-cartridge by pulling it out by
+fingers and replace it with the new one by simply pushing
+it inside the slot, just like replacing a SIM card. The
+existing bulb now glows like a new bulb with negligible
+replacement cost. Hence, there is reduction in plastic and
+aluminum consumption and reducing carbon emissions
+and global warming</p>
+    </div>
+  </div>
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+      document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
+      document.getElementById('tab-' + id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

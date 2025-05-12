@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Aditya Raj Chopra",
+    "state": "Uttar Pradesh",
+    "city": "Ghaziabad",
+    "lat": 28.6654,
+    "lon": 77.4392,
+    "link": "idea_pages/idea_01.html"
+  },
+  {
+    "name": "Udayshankar Ravikumar",
+    "state": "Kerala",
+    "city": "Thammanam",
+    "lat": 9.3033,
+    "lon": 76.4358,
+    "link": "idea_pages/idea_02.html"
+  },
+  {
+    "name": "Udayshankar Ravikumar",
+    "state": "Kerala",
+    "city": "Thammanam",
+    "lat": 9.5033,
+    "lon": 76.6358,
+    "link": "idea_pages/idea_03.html"
+  },
+  {
+    "name": "Udayshankar Ravikumar",
+    "state": "Kerala",
+    "city": "Thammanam",
+    "lat": 9.7033,
+    "lon": 76.8358,
+    "link": "idea_pages/idea_04.html"
+  },
+  {
+    "name": "Oorjit Mahajan",
+    "state": "Uttar Pradesh",
+    "city": "Noida",
+    "lat": 26.8467,
+    "lon": 80.9462,
+    "link": "idea_pages/idea_05.html"
+  }
+]

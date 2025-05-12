@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DextraBot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #2e1065, #9333EA);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      padding: 80px 20px;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .tagline {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      position: fixed;
+      top: 80px;
+      left: 10px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 52px;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .tab-button {
+      background: rgba(255,255,255,0.2);
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .tab-button.active {
+      background: #facc15;
+      color: #1e1b4b;
+    }
+    .tab-content {
+      display: none;
+      max-width: 900px;
+      margin: auto;
+    }
+    .card {
+      position: relative;
+      padding: 40px 30px;
+      border-radius: 16px;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      font-size: 20px;
+      text-align: left;
+    }
+    .card.problem {
+      background: rgba(0,0,0,0.4);
+      border-left: 8px solid #ef4444;
+    }
+    .card.problem::before {
+      content: "✖";
+      position: absolute;
+      font-size: 120px;
+      color: rgba(255, 255, 255, 0.05);
+      top: 10px;
+      left: 20px;
+    }
+    .card.solution {
+      background: rgba(255,255,255,0.07);
+      border-left: 8px solid #facc15;
+    }
+    .card.solution::before {
+      content: "✔";
+      position: absolute;
+      font-size: 120px;
+      color: rgba(255, 255, 255, 0.05);
+      top: 10px;
+      right: 20px;
+    }
+    .card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .card p {
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>DextraBot</h1>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('idea')">💡 Idea</button>
+    <button class="tab-button" onclick="showTab('innovator')">👤 Innovator</button>
+    <button class="tab-button" onclick="showTab('learn')">📘 Learn More</button>
+  </div>
+  <div id="tab-idea" class="tab-content" style="display:block;">
+    <div class="card problem">
+      <h2>The Problem</h2>
+      <p>People with hand tremors from neuromuscular conditions struggle to perform basic tasks like eating or brushing due to loss of dexterity, and available assistive devices are expensive and inaccessible.</p>
+    </div>
+    <div class="card solution">
+      <h2>The Solution</h2>
+      <p>DextraBot is a low-cost, gyroscopically stabilized robotic handle that helps users with tremors eat and brush independently by keeping attachments like spoons or toothbrushes steady, using dual-axis correction and IoT-enabled feedback.</p>
+    </div>
+  </div>
+  <div id="tab-innovator" class="tab-content">
+    <div class="card">
+      <h2>👤 Oorjit Mahajan</h2>
+      <p><strong>🎓 Class:</strong> 12</p>
+      <p><strong>🏫 School:</strong> Shiv Nadar School, Noida</p>
+      <p><strong>📍 City:</strong> Noida</p>
+      <p><strong>🗺️ State:</strong> Uttar Pradesh</p>
+    </div>
+  </div>
+  <div id="tab-learn" class="tab-content">
+    <div class="card">
+      <h2>📘 Learn More</h2>
+      <p>The flagship product - DextraBot is a cost-effective and non-intrusive device designed to assist individuals afflicted with hand tremors caused by neuromuscular conditions that impair dexterity. The device aims to empower these individuals by enabling them to perform daily activities such as eating and brushing with dignity and self-sufficiency. The development of DextraBot was preceded by an extensive review of relevant literature and comprehensive surveys, which garnered over 500 responses.</p><p>Developed at a fraction of the cost (2500 ₹/35$) of the solutions available in the market, the extremely accessible, user-friendly and the disruptive product is an external handheld gyroscopically stable robotic handle with various attachments, including but not restricted to spoons, 4 forks, or toothbrushes. The IOT enabled state-of-the-art dual-axis gyroscopic stabilization system (Accelerometer Sensor Module - MPU6050) built with a reliable open-source electronics platform (Arduino Nano 33 BLE) with Li-Po batteries for power, and Servo Motors for dual axis correction, movement correction and attachment control, will ensure that the end of the handle remains stable even when the patient's hands shake.</p><p>The current prototype boasts an ergonomic design, featuring a sturdy 3D-printed structure, designed using sophisticated CAD/CAM Software (Fusion 360), manufactured using PLA
+Filament, and comfortable rubber grips to optimize user comfort during prolonged usage. Furthermore, our future plans include the active integration of Artificial Intelligence-enabled Tremor Profiling Algorithms. This integration is designed to provide doctors with valuable insights into the user's tremors in real time,</p>
+    </div>
+  </div>
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+      document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
+      document.getElementById('tab-' + id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Innovation Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #2e1065, #9333EA);
+      font-family: 'Inter', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 36px;
+      margin: 20px 0;
+    }
+
+    #map {
+      height: 85vh;
+      width: 90vw;
+      margin: auto;
+      border-radius: 16px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+      border: 4px solid white;
+    }
+
+    .leaflet-popup-content {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌍 Innovation Map</h1>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([22.5, 80], 5);
+  // Fixed zoom centered on India
+    const usedCoords = [];
+
+    function jitter(lat, lon) {
+      const key = `${lat},${lon}`;
+      let count = usedCoords.filter(c => c === key).length;
+      usedCoords.push(key);
+      const offset = 0.1 * count;
+      return [lat + offset, lon + offset];
+    }
+
+    fetch("pin_points.json")
+    .then(response => response.json())
+    .then(data => {
+      console.log("Loaded map data:", data);  // ✅ this goes inside here
+      console.log("First idea object:", data[0]);
+        data.forEach(idea => {
+          const [jLat, jLon] = jitter(idea.lat, idea.lon);
+          L.marker([jLat, jLon])
+            .addTo(map)
+            .bindPopup(`
+              <strong>${idea.name}</strong><br>
+              ${idea.state}<br>
+              <a href="${idea.link}" target="_blank">Open Idea →</a>
+            `);
+        });
+      })
+      .catch(err => console.error("Error loading map data:", err));
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap & Carto',
+      maxZoom: 18
+    }).addTo(map);
+  </script>
+
+</body>
+</html>

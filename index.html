@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Innovation Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #2e1065, #9333EA);
+      font-family: 'Inter', sans-serif;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 36px;
+      margin: 40px 0 20px;
+    }
+    .toolbar {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .tag-filter {
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .tag-filter.active {
+      background: #14b8a6;
+      color: black;
+    }
+    .surprise {
+      background: #5eead4;
+      color: #1e1b4b;
+      border: none;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 60px;
+    }
+    .card {
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      width: 280px;
+      border-radius: 16px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      background: rgba(255,255,255,0.12);
+    }
+    .card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: #5eead4;
+    }
+    .card p {
+      font-size: 15px;
+      margin: 0;
+      line-height: 1.4;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      background: #5eead4;
+      color: #1e1b4b;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .tags {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      background: rgba(20, 184, 166, 0.15);
+      border: 1px solid #14b8a6;
+      color: #99f6e4;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Innovation Gallery</h1>
+
+  <div class="toolbar">
+    <button class="tag-filter" onclick="toggleTag('All')">All</button>
+    <button class="tag-filter" onclick="toggleTag('AI')">AI</button>
+    <button class="tag-filter" onclick="toggleTag('Fashion')">Fashion</button>
+    <button class="tag-filter" onclick="toggleTag('Agriculture')">Agriculture</button>
+    <button class="tag-filter" onclick="toggleTag('Sustainability')">Sustainability</button>
+    <button class="tag-filter" onclick="toggleTag('Health Tech')">Health Tech</button>
+    <button class="tag-filter" onclick="toggleTag('Automation')">Automation</button>
+    <button class="tag-filter" onclick="toggleTag('Rural Innovation')">Rural Innovation</button>
+    <button class="tag-filter" onclick="toggleTag('Recycling')">Recycling</button>
+    <button class="surprise" onclick="surpriseMe()">🎲 Surprise Me</button>
+  </div>
+
+  <div class="grid" id="cardGrid">
+    
+    <div class="card" data-tags="Sustainability">
+      <h2>G.LED Bulb</h2>
+      <p>G.LED is a repairable LED bulb that reduces waste and cost by letting users replace only the light cartridge, not the whole bulb.</p>
+      <div class="tags"><span class='tag'>Sustainability</span></div>
+      <a href="idea_pages/idea_01.html" target="_blank">Explore Idea →</a>
+    </div>
+    
+    <div class="card" data-tags="Health Tech">
+      <h2>3rDi 4 All</h2>
+      <p>A voice-interactive Android app for the blind that uses ARCore and Depth API to provide real-time indoor navigation and obstacle alerts through auditory cues.</p>
+      <div class="tags"><span class='tag'>Health Tech</span></div>
+      <a href="idea_pages/idea_02.html" target="_blank">Explore Idea →</a>
+    </div>
+    
+    <div class="card" data-tags="AI Automation">
+      <h2>Remote Lane Reversal System</h2>
+      <p>A Portable Solution for Efficient Traffic Management and Decongestion</p>
+      <div class="tags"><span class='tag'>AI</span><span class='tag'>Automation</span></div>
+      <a href="idea_pages/idea_03.html" target="_blank">Explore Idea →</a>
+    </div>
+    
+    <div class="card" data-tags="AI Rural Innovation">
+      <h2>CodeBhasha</h2>
+      <p>CodeBhasha is an Android app that enables children to learn computer coding in their native language, starting with Malayalam, without needing English or expensive computers.</p>
+      <div class="tags"><span class='tag'>AI</span><span class='tag'>Rural Innovation</span></div>
+      <a href="idea_pages/idea_04.html" target="_blank">Explore Idea →</a>
+    </div>
+    
+    <div class="card" data-tags="Health Tech Automation">
+      <h2>DextraBot</h2>
+      <p>Empowering Lives with Affordable Tremor-Assistive Technology and AIEnhanced Insights</p>
+      <div class="tags"><span class='tag'>Health Tech</span><span class='tag'>Automation</span></div>
+      <a href="idea_pages/idea_05.html" target="_blank">Explore Idea →</a>
+    </div>
+    
+  </div>
+
+  <script>
+    let activeTags = new Set();
+
+    function toggleTag(tag) {
+      if (tag === "All") {
+        activeTags.clear();
+        document.querySelectorAll(".tag-filter").forEach(b => b.classList.remove("active"));
+      } else {
+        const btn = document.querySelector(`.tag-filter[onclick*="${tag}"]`);
+        if (activeTags.has(tag)) {
+          activeTags.delete(tag);
+          btn.classList.remove("active");
+        } else {
+          activeTags.add(tag);
+          btn.classList.add("active");
+        }
+      }
+      applyFilter();
+    }
+
+    function applyFilter() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const tags = card.getAttribute('data-tags');
+        const matches = Array.from(activeTags).some(tag => tags.includes(tag));
+        if (activeTags.size === 0 || matches) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    function surpriseMe() {
+      const visibleCards = Array.from(document.querySelectorAll('.card'))
+        .filter(card => card.style.display !== "none");
+      if (visibleCards.length === 0) return;
+      const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
+      const link = randomCard.querySelector("a").href;
+      window.open(link, "_blank");
+    }
+  </script>
+</body>
+</html>
