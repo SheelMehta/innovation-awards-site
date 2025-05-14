@@ -6,5 +6,37 @@
     "lat": 28.6654,
     "lon": 77.4392,
     "link": "idea_pages/idea_01.html"
+  },
+  {
+    "name": "Udayshankar Ravikumar",
+    "state": "Kerala",
+    "city": "Thammanam",
+    "lat": 9.3033,
+    "lon": 76.4358,
+    "link": "idea_pages/idea_02.html"
+  },
+  {
+    "name": "Udayshankar Ravikumar",
+    "state": "Kerala",
+    "city": "Thammanam",
+    "lat": 9.4533,
+    "lon": 76.5858,
+    "link": "idea_pages/idea_03.html"
+  },
+  {
+    "name": "Udayshankar Ravikumar",
+    "state": "Kerala",
+    "city": "Thammanam",
+    "lat": 9.6033,
+    "lon": 76.7358,
+    "link": "idea_pages/idea_04.html"
+  },
+  {
+    "name": "Oorjit Mahajan",
+    "state": "Uttar Pradesh",
+    "city": "Noida",
+    "lat": 26.8467,
+    "lon": 80.9462,
+    "link": "idea_pages/idea_05.html"
   }
 ]

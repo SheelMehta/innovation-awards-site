@@ -220,8 +220,11 @@ for index, row in df.iterrows():
 </html>""")
 
     # Coordinate & jitter
-    key = f"{city.lower()},{state.lower()}" if city else state.lower()
-    base = coord_lookup.get(key)
+    city_key = f"{city.lower()},{state.lower()}"
+    state_key = state.lower()
+
+    base = coord_lookup.get(city_key) or coord_lookup.get(state_key)
+
     if not base:
         continue
     coord_key = f"{base['lat']},{base['lon']}"
