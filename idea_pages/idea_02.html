@@ -17,13 +17,11 @@
     }
     .tagline {
       writing-mode: vertical-rl;
-      text-orientation: mixed;
       position: fixed;
       top: 80px;
       left: 10px;
       font-size: 14px;
       color: rgba(255, 255, 255, 0.4);
-      letter-spacing: 1px;
     }
     h1 {
       font-family: 'Orbitron', sans-serif;
@@ -66,6 +64,7 @@
       font-size: 20px;
       text-align: left;
     }
+
     .card.problem {
       background: rgba(0,0,0,0.4);
       border-left: 8px solid #ef4444;
@@ -98,9 +97,23 @@
     .card p {
       line-height: 1.7;
     }
+    .back {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #5eead4;
+      color: #1e1b4b;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+
+  <a class="back" href="../landing.html">← Back</a>
+  <div class="tagline">BUILT TO BE REPAIRED</div>
   <h1>3rDi 4 All</h1>
   <div class="tabs">
     <button class="tab-button active" onclick="showTab('idea')">💡 Idea</button>
@@ -129,7 +142,7 @@
   <div id="tab-learn" class="tab-content">
     <div class="card">
       <h2>📘 Learn More</h2>
-      <p>This idea revolves around developing a voice-interactive indoor navigation smartphone application specifically designed for visually impaired individuals. Currently, blind people often depend on others for assistance while navigating unfamiliar indoor environments such as hospitals, airports, train stations, government offices, and shopping malls. This application aims to empower them with independent, safe, and accurate navigation using their smartphones.</p><p>The app, called 3rDi 4 All, uses voice commands to interact with the user and offers turn-by-turn navigation to reach desired locations within a building. It responds to queries like "Take me to the washroom" and then provides real-time auditory instructions such as "Turn left in 10 steps" or "Elevator ahead on your right." What makes this different from regular navigation apps is its focus on indoor environments where GPS is not reliable, and where small obstacles and environmental details matter a lot more to blind users.</p><p>To implement this, the app leverages Google ARCore and Cloud Anchors to map and track the indoor environment. This technology allows for highly accurate indoor localization and routing. Additionally, the app uses Depth API to detect nearby obstacles in real-time, warning the user audibly if something blocks the path, like a chair, steps, or a person.</p><p>Built using Unity, this cross-platform tool allows for future upgrades and expansion to different types of buildings and spaces. With the inclusion of metadata such as location of elevators, ramps, and stairs, the app ensures that navigation is not only possible but also context-aware and tailored to the specific needs of blind individuals.</p><p>In short, this app represents a powerful blend of assistive technology and augmented reality, giving blind users the confidence and independence to navigate complex indoor spaces without relying on others.</p><p></p><p></p><p></p><p></p>
+      <p>This idea revolves around developing a voice-interactive indoor navigation smartphone application specifically designed for visually impaired individuals. Currently, blind people often depend on others for assistance while navigating unfamiliar indoor environments such as hospitals, airports, train stations, government offices, and shopping malls. This application aims to empower them with independent, safe, and accurate navigation using their smartphones.</p><p>The app, called 3rDi 4 All, uses voice commands to interact with the user and offers turn-by-turn navigation to reach desired locations within a building. It responds to queries like "Take me to the washroom" and then provides real-time auditory instructions such as "Turn left in 10 steps" or "Elevator ahead on your right." What makes this different from regular navigation apps is its focus on indoor environments where GPS is not reliable, and where small obstacles and environmental details matter a lot more to blind users.</p><p>To implement this, the app leverages Google ARCore and Cloud Anchors to map and track the indoor environment. This technology allows for highly accurate indoor localization and routing. Additionally, the app uses Depth API to detect nearby obstacles in real-time, warning the user audibly if something blocks the path, like a chair, steps, or a person.</p><p>Built using Unity, this cross-platform tool allows for future upgrades and expansion to different types of buildings and spaces. With the inclusion of metadata such as location of elevators, ramps, and stairs, the app ensures that navigation is not only possible but also context-aware and tailored to the specific needs of blind individuals.</p><p>In short, this app represents a powerful blend of assistive technology and augmented reality, giving blind users the confidence and independence to navigate complex indoor spaces without relying on others.</p>
     </div>
   </div>
   <script>

@@ -17,13 +17,11 @@
     }
     .tagline {
       writing-mode: vertical-rl;
-      text-orientation: mixed;
       position: fixed;
       top: 80px;
       left: 10px;
       font-size: 14px;
       color: rgba(255, 255, 255, 0.4);
-      letter-spacing: 1px;
     }
     h1 {
       font-family: 'Orbitron', sans-serif;
@@ -66,6 +64,7 @@
       font-size: 20px;
       text-align: left;
     }
+
     .card.problem {
       background: rgba(0,0,0,0.4);
       border-left: 8px solid #ef4444;
@@ -98,9 +97,23 @@
     .card p {
       line-height: 1.7;
     }
+    .back {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #5eead4;
+      color: #1e1b4b;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+
+  <a class="back" href="../landing.html">← Back</a>
+  <div class="tagline">BUILT TO BE REPAIRED</div>
   <h1>CodeBhasha</h1>
   <div class="tabs">
     <button class="tab-button active" onclick="showTab('idea')">💡 Idea</button>
@@ -129,7 +142,7 @@
   <div id="tab-learn" class="tab-content">
     <div class="card">
       <h2>📘 Learn More</h2>
-      <p>CodeBhasha is an innovative Android app designed to make computer coding accessible in native Indian languages, starting with Malayalam. Traditionally, learning to code has required proficiency in English, which poses a barrier for many students, especially in rural or non-English-speaking regions. Recognizing that students learn better when taught in their mother tongue, this app aims to bridge the gap between language and technology education.</p><p>The core of this idea lies in the belief that language should not be a barrier to learning technology. CodeBhasha removes the dependency on English by allowing users to write and understand code in their own language. The first implementation, called ezr Malayalam, is a simple programming language built for the Malayalam-speaking community. It allows children to grasp key programming concepts using familiar words and logic, making the learning experience more intuitive and enjoyable.</p><p>What makes this app even more powerful is its accessibility. It runs on Android smartphones, eliminating the need for expensive computers or laptops. This opens up opportunities for students in economically weaker or remote areas to learn coding without major infrastructure investments. The programming language itself is built using Dot Net C#, and the app was developed using Unity, making it flexible and easy to adapt for other languages like Hindi, Tamil, or even Sanskrit by changing the syntax.</p><p>CodeBhasha is not just an app—it’s a movement towards inclusive and localized digital education. By empowering students to code in their native language, it helps preserve linguistic diversity while promoting digital literacy. As more languages are added to the platform, this project has the potential to reach millions of children and inspire a new generation of coders from all linguistic backgrounds.</p><p>In essence, CodeBhasha combines language empowerment with technology education, ensuring that no child is left behind in the digital revolution simply because they don’t speak English.</p><p></p><p></p><p></p><p></p>
+      <p>CodeBhasha is an innovative Android app designed to make computer coding accessible in native Indian languages, starting with Malayalam. Traditionally, learning to code has required proficiency in English, which poses a barrier for many students, especially in rural or non-English-speaking regions. Recognizing that students learn better when taught in their mother tongue, this app aims to bridge the gap between language and technology education.</p><p>The core of this idea lies in the belief that language should not be a barrier to learning technology. CodeBhasha removes the dependency on English by allowing users to write and understand code in their own language. The first implementation, called ezr Malayalam, is a simple programming language built for the Malayalam-speaking community. It allows children to grasp key programming concepts using familiar words and logic, making the learning experience more intuitive and enjoyable.</p><p>What makes this app even more powerful is its accessibility. It runs on Android smartphones, eliminating the need for expensive computers or laptops. This opens up opportunities for students in economically weaker or remote areas to learn coding without major infrastructure investments. The programming language itself is built using Dot Net C#, and the app was developed using Unity, making it flexible and easy to adapt for other languages like Hindi, Tamil, or even Sanskrit by changing the syntax.</p><p>CodeBhasha is not just an app—it’s a movement towards inclusive and localized digital education. By empowering students to code in their native language, it helps preserve linguistic diversity while promoting digital literacy. As more languages are added to the platform, this project has the potential to reach millions of children and inspire a new generation of coders from all linguistic backgrounds.</p><p>In essence, CodeBhasha combines language empowerment with technology education, ensuring that no child is left behind in the digital revolution simply because they don’t speak English.</p>
     </div>
   </div>
   <script>

@@ -106,21 +106,25 @@
       font-size: 12px;
       font-weight: 500;
     }
+    .back {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #5eead4;
+      color: #1e1b4b;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+  <a class="back" href="landing.html">← Back</a>
   <h1>🧠 Innovation Gallery</h1>
 
   <div class="toolbar">
-    <button class="tag-filter" onclick="toggleTag('All')">All</button>
-    <button class="tag-filter" onclick="toggleTag('AI')">AI</button>
-    <button class="tag-filter" onclick="toggleTag('Fashion')">Fashion</button>
-    <button class="tag-filter" onclick="toggleTag('Agriculture')">Agriculture</button>
-    <button class="tag-filter" onclick="toggleTag('Sustainability')">Sustainability</button>
-    <button class="tag-filter" onclick="toggleTag('Health Tech')">Health Tech</button>
-    <button class="tag-filter" onclick="toggleTag('Automation')">Automation</button>
-    <button class="tag-filter" onclick="toggleTag('Rural Innovation')">Rural Innovation</button>
-    <button class="tag-filter" onclick="toggleTag('Recycling')">Recycling</button>
+    <button class='tag-filter' onclick="toggleTag('AI')">AI</button><button class='tag-filter' onclick="toggleTag('Automation')">Automation</button><button class='tag-filter' onclick="toggleTag('Health Tech')">Health Tech</button><button class='tag-filter' onclick="toggleTag('Rural Innovation')">Rural Innovation</button><button class='tag-filter' onclick="toggleTag('Sustainability')">Sustainability</button>
     <button class="surprise" onclick="surpriseMe()">🎲 Surprise Me</button>
   </div>
 
@@ -167,18 +171,13 @@
     let activeTags = new Set();
 
     function toggleTag(tag) {
-      if (tag === "All") {
-        activeTags.clear();
-        document.querySelectorAll(".tag-filter").forEach(b => b.classList.remove("active"));
+      const button = document.querySelector(`.tag-filter[onclick*="${tag}"]`);
+      if (activeTags.has(tag)) {
+        activeTags.delete(tag);
+        button.classList.remove('active');
       } else {
-        const btn = document.querySelector(`.tag-filter[onclick*="${tag}"]`);
-        if (activeTags.has(tag)) {
-          activeTags.delete(tag);
-          btn.classList.remove("active");
-        } else {
-          activeTags.add(tag);
-          btn.classList.add("active");
-        }
+        activeTags.add(tag);
+        button.classList.add('active');
       }
       applyFilter();
     }
@@ -197,8 +196,7 @@
     }
 
     function surpriseMe() {
-      const visibleCards = Array.from(document.querySelectorAll('.card'))
-        .filter(card => card.style.display !== "none");
+      const visibleCards = Array.from(document.querySelectorAll('.card')).filter(card => card.style.display !== "none");
       if (visibleCards.length === 0) return;
       const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
       const link = randomCard.querySelector("a").href;
