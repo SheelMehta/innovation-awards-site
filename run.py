@@ -244,7 +244,7 @@ for index, row in df.iterrows():
 with open("pin_points.json", "w", encoding="utf-8") as f:
     json.dump(map_pins, f, indent=2)
 
-# Write index.html
+# Write ideas.html
 with open("ideas.html", "w", encoding="utf-8") as f:
     f.write(f"""<!DOCTYPE html>
 <html lang="en">
