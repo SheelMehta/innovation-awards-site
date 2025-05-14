@@ -175,7 +175,7 @@ for index, row in df.iterrows():
 </head>
 <body>
 
-  <a class="back" href="../landing.html">← Back</a>
+  <a class="back" href="../index.html">← Back</a>
   <div class="tagline">BUILT TO BE REPAIRED</div>
   <h1>{title}</h1>
   <div class="tabs">
@@ -368,7 +368,7 @@ with open("ideas.html", "w", encoding="utf-8") as f:
   </style>
 </head>
 <body>
-  <a class="back" href="landing.html">← Back</a>
+  <a class="back" href="index.html">← Back</a>
   <h1>🧠 Innovation Gallery</h1>
 
   <div class="toolbar">
