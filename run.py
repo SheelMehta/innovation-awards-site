@@ -175,7 +175,7 @@ for index, row in df.iterrows():
 </head>
 <body>
 
-  <a class="back" href="../index.html">← Back</a>
+  <a class="back" href="../ideas.html">← Back</a>
   <div class="tagline">BUILT TO BE REPAIRED</div>
   <h1>{title}</h1>
   <div class="tabs">
@@ -232,6 +232,7 @@ for index, row in df.iterrows():
     used_locations[coord_key] = used + 1
     jitter = 0.15 * used
     map_pins.append({
+        "title": title,
         "name": name,
         "state": state,
         "city": city,
