@@ -1,5 +1,6 @@
 [
   {
+    "title": "G.LED Bulb",
     "name": "Aditya Raj Chopra",
     "state": "Uttar Pradesh",
     "city": "Ghaziabad",
@@ -8,6 +9,7 @@
     "link": "idea_pages/idea_01.html"
   },
   {
+    "title": "3rDi 4 All",
     "name": "Udayshankar Ravikumar",
     "state": "Kerala",
     "city": "Thammanam",
@@ -16,6 +18,7 @@
     "link": "idea_pages/idea_02.html"
   },
   {
+    "title": "Remote Lane Reversal System",
     "name": "Udayshankar Ravikumar",
     "state": "Kerala",
     "city": "Thammanam",
@@ -24,6 +27,7 @@
     "link": "idea_pages/idea_03.html"
   },
   {
+    "title": "CodeBhasha",
     "name": "Udayshankar Ravikumar",
     "state": "Kerala",
     "city": "Thammanam",
@@ -32,6 +36,7 @@
     "link": "idea_pages/idea_04.html"
   },
   {
+    "title": "DextraBot",
     "name": "Oorjit Mahajan",
     "state": "Uttar Pradesh",
     "city": "Noida",
