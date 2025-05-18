@@ -7,14 +7,6 @@ def format_paragraphs(text):
     """Converts double-newline-separated paragraphs to <p> tags."""
     return "".join(f"<p>{p.strip()}</p>" for p in str(text).strip().split("\n\n") if p.strip())
 
-def get_status_badge(status):
-    """Returns a colored badge for the status field."""
-    if not status or status.lower() == "idea":
-        return ""
-    color = "#FFD600" if "poc" in status.lower() else "#5eead4"
-    txt = "PoC developed" if "poc" in status.lower() else status
-    return f"<div class='status-badge' style='background:{color};color:#1e1b4b;padding:7px 20px;border-radius:22px;font-weight:700;display:inline-block;margin-left:16px;'>{txt}</div>"
-
 def get_teacher_line(teacher):
     """Returns a teacher-assist line if applicable."""
     if teacher.strip().lower() == "yes":
@@ -80,7 +72,6 @@ for index, row in df.iterrows():
     state = str(row.get("state", "")).strip()
     year = str(row.get("year", "")).strip()
     age = str(row.get("age", "")).strip()
-    status = str(row.get("status", "")).strip()
     poc = str(row.get("poc", "")).strip()
     teacher = str(row.get("teacher", "")).strip()
 
@@ -93,7 +84,6 @@ for index, row in df.iterrows():
     year_line = f'<div class="innovator-row"><span class="innovator-icon">🕰️</span><span class="innovator-detail"><strong>Year awarded:</strong> {year}</span></div>' if year else ''
     age_line = f'<div class="innovator-row"><span class="innovator-icon">🎂</span><span class="innovator-detail"><strong>Age:</strong> {age}</span></div>' if age else ''
     teacher_line = get_teacher_line(teacher)
-    status_badge = get_status_badge(status)
 
     innovator_card = f"""
     <div class="innovator-card">
@@ -111,7 +101,6 @@ for index, row in df.iterrows():
           {age_line}
           {teacher_line}
         </div>
-        {status_badge}
       </div>
     </div>
     """
