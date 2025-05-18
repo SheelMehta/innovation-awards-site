@@ -122,12 +122,10 @@
 <body>
   <a class="back" href="index.html">← Back</a>
   <h1>🧠 Innovation Gallery</h1>
-
   <div class="toolbar">
     <button class='tag-filter' onclick="toggleTag('AI')">AI</button><button class='tag-filter' onclick="toggleTag('Automation')">Automation</button><button class='tag-filter' onclick="toggleTag('Health Tech')">Health Tech</button><button class='tag-filter' onclick="toggleTag('Rural Innovation')">Rural Innovation</button><button class='tag-filter' onclick="toggleTag('Sustainability')">Sustainability</button>
     <button class="surprise" onclick="surpriseMe()">🎲 Surprise Me</button>
   </div>
-
   <div class="grid" id="cardGrid">
     
     <div class="card" data-tags="Sustainability">
@@ -166,10 +164,8 @@
     </div>
     
   </div>
-
   <script>
     let activeTags = new Set();
-
     function toggleTag(tag) {
       const button = document.querySelector(`.tag-filter[onclick*="${tag}"]`);
       if (activeTags.has(tag)) {
@@ -181,7 +177,6 @@
       }
       applyFilter();
     }
-
     function applyFilter() {
       const cards = document.querySelectorAll('.card');
       cards.forEach(card => {
@@ -194,7 +189,6 @@
         }
       });
     }
-
     function surpriseMe() {
       const visibleCards = Array.from(document.querySelectorAll('.card')).filter(card => card.style.display !== "none");
       if (visibleCards.length === 0) return;

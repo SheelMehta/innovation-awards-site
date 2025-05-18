@@ -41,7 +41,7 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 12px;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s;
     }
     .button-row a:hover {
       transform: scale(1.05);
@@ -58,11 +58,19 @@
       max-width: 260px;
     }
     .person img {
-      width: 100%;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.4);
       margin-bottom: 12px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
+
+
+    
     .person p {
       font-size: 15px;
       line-height: 1.5;
@@ -76,12 +84,27 @@
       line-height: 1.7;
       padding: 0 10px;
     }
+    a.org-link {
+      color: #00FFD0;
+      text-decoration: underline;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    a.org-link:visited {
+      color: #B388FF;
+    }
+    a.org-link:hover,
+    a.org-link:active {
+      color: #38bdf8;
+    }
   </style>
 </head>
 <body>
 
   <h1>🧠 Ignited Minds Innovation Award</h1>
-  <h2>A celebration of India’s youngest changemakers—bold student innovators who solve real-world problems through science, technology, and empathy.</h2>
+  <h2>
+    A celebration of India’s youngest changemakers—bold student innovators who solve real-world problems through science, technology, and empathy.
+  </h2>
 
   <div class="button-row">
     <a href="ideas.html">✨ Browse Breakthroughs</a>
@@ -90,13 +113,11 @@
 
   <div class="section">
     <p>
-      The <strong>Ignited Minds Innovation Award</strong> honors exceptional school-age inventors across India who dream big, prototype bold, and think from the grassroots. 
-      These students don’t just build gadgets—they design with purpose, empathy, and impact.
-    </p>
-    <p>
-      Launched in tribute to <strong>Dr. A.P.J. Abdul Kalam’s</strong> dream of an innovation-powered India, the award is supported by the 
-      <strong>Honey Bee Network</strong>, <strong>GIAN</strong> (Grassroots Innovations Augmentation Network), and other forward-looking organizations 
-      working at the intersection of youth, creativity, and inclusive technology.
+      The <strong>Dr. A.P.J. Abdul Kalam Ignited Mind Children’s Creativity and Innovation Award</strong> is given by the 
+      <strong>Honey Bee Network</strong>, anchored by 
+      <a href="https://www.sristi.org/about-us/" class="org-link" target="_blank">SRISTI</a>, and supported by 
+      <a href="https://gian.org/about-us/" class="org-link" target="_blank">GIAN</a>.
+      Launched in tribute to Dr. Kalam’s dream of an innovation-powered India, it honors exceptional student inventors across India who design with purpose, empathy, and grassroots impact.
     </p>
     <p>
       Every winner’s idea is showcased here: not just as a project, but as proof that India's future is being quietly rewritten by young minds across the country.
@@ -104,22 +125,23 @@
   </div>
 
   <div class="credits">
-  <div class="person">
-    <img src="images/dr.kalam.jpg" alt="Dr. A.P.J. Abdul Kalam">
-    <p><strong>Dr. A.P.J. Abdul Kalam</strong><br/>
-    <em>Visionary Scientist, 11th President of India</em><br/>
-    A tireless advocate for youth innovation, Dr. Kalam believed that “dreams transform into thoughts, and thoughts into actions.” His legacy inspires this award—igniting young minds to build a self-reliant, inventive India. Through his work in aerospace and education, he championed a future where every student is empowered to solve real-world problems.
-    </p>
+    <div class="person">
+      <img src="images/dr.kalam.jpg" alt="Dr. A.P.J. Abdul Kalam">
+      <p>
+        <strong>Dr. A.P.J. Abdul Kalam</strong><br/>
+        <em>Visionary Scientist, 11th President of India</em><br/>
+        A tireless advocate for youth innovation, Dr. Kalam believed that “dreams transform into thoughts, and thoughts into actions.” His legacy inspires this award—igniting young minds to build a self-reliant, inventive India. Through his work in aerospace and education, he championed a future where every student is empowered to solve real-world problems.
+      </p>
+    </div>
+    <div class="person">
+      <img src="images/dr.gupta.jpg" alt="Prof. Anil Gupta">
+      <p>
+        <strong>Prof. Anil Gupta</strong><br/>
+        <em>Founder, Honey Bee Network & Mentor to India's Youngest Inventors</em><br/>
+        Prof. Gupta pioneered the grassroots innovation movement in India, bringing visibility to ideas from villages, classrooms, and local communities. He has spent decades nurturing student creators and connecting their insights to institutions that can amplify them. His life’s work proves that even the most modest invention can carry national significance.
+      </p>
+    </div>
   </div>
-
-  <div class="person">
-    <img src="images/dr.gupta.jpg" alt="Prof. Anil Gupta">
-    <p><strong>Prof. Anil Gupta</strong><br/>
-    <em>Founder, Honey Bee Network & Mentor to India's Youngest Inventors</em><br/>
-    Prof. Gupta pioneered the grassroots innovation movement in India, bringing visibility to ideas from villages, classrooms, and local communities. He has spent decades nurturing student creators and connecting their insights to institutions that can amplify them. His life’s work proves that even the most modest invention can carry national significance.
-    </p>
-  </div>
-</div>
 
 </body>
 </html>

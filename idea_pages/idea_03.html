@@ -15,20 +15,58 @@
       text-align: center;
       overflow-x: hidden;
     }
-    .tagline {
-      writing-mode: vertical-rl;
-      position: fixed;
-      top: 80px;
-      left: 10px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.4);
-    }
     h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 52px;
-      margin-bottom: 40px;
+      margin-bottom: 18px;
       letter-spacing: 2px;
       text-transform: uppercase;
+    }
+    .innovator-card {
+      background: rgba(0,0,0,0.28);
+      border-radius: 22px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+      max-width: 540px;
+      margin: 32px auto 20px auto;
+      padding: 30px 32px 24px 32px;
+      text-align: left;
+      position: relative;
+    }
+    .innovator-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .innovator-row:last-child { margin-bottom: 0; }
+    .innovator-icon {
+      font-size: 21px;
+      margin-right: 8px;
+      min-width: 24px;
+      text-align: center;
+    }
+    .innovator-detail {
+      font-size: 1em;
+      color: #fff;
+    }
+    .teacher-note {
+      margin-top: 12px;
+      font-size: 16px;
+      color: #22c55e;
+      display: flex;
+      align-items: center;
+    }
+    .status-badge {
+      background: #FFD600;
+      color: #232946;
+      padding: 7px 16px;
+      border-radius: 18px;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 1px 7px rgba(0,0,0,0.11);
+      margin-left: 14px;
+      margin-top: 6px;
+      display: inline-block;
+      white-space: nowrap;
     }
     .tabs {
       display: flex;
@@ -36,15 +74,19 @@
       justify-content: center;
       flex-wrap: wrap;
       margin-bottom: 40px;
+      margin-top: 22px;
     }
     .tab-button {
       background: rgba(255,255,255,0.2);
       border: none;
-      padding: 10px 20px;
+      padding: 13px 38px;
       color: white;
-      font-size: 16px;
-      border-radius: 8px;
+      font-size: 20px;
+      border-radius: 14px;
       cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-weight: bold;
+      transition: background 0.16s, color 0.16s;
     }
     .tab-button.active {
       background: #facc15;
@@ -64,7 +106,6 @@
       font-size: 20px;
       text-align: left;
     }
-
     .card.problem {
       background: rgba(0,0,0,0.4);
       border-left: 8px solid #ef4444;
@@ -107,18 +148,72 @@
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
+      z-index: 2;
+      font-size: 18px;
+    }
+    a.org-link {
+      color: #00FFD0;
+      text-decoration: underline;
+      font-weight: bold;
+      transition: color 0.2s;
+      word-break: break-all;
+    }
+    a.org-link:visited {
+      color: #B388FF;
+    }
+    a.org-link:hover,
+    a.org-link:active {
+      color: #38bdf8;
+    }
+    .share-button {
+      margin: 24px auto 42px auto;
+      display: block;
+      background: #5eead4;
+      color: #1e1b4b;
+      font-weight: bold;
+      border: none;
+      padding: 13px 32px;
+      font-size: 21px;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 2px 16px rgba(0,255,208,0.13);
+      transition: background 0.15s;
+    }
+    .share-button:hover {
+      background: #00FFD0;
+      color: #232946;
     }
   </style>
 </head>
 <body>
 
   <a class="back" href="../ideas.html">← Back</a>
-  <div class="tagline">BUILT TO BE REPAIRED</div>
   <h1>Remote Lane Reversal System</h1>
+  
+    <div class="innovator-card">
+      <div style="display:flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <div class="innovator-row" style="margin-bottom: 12px;">
+            <span class="innovator-icon" style="font-size: 34px;">👤</span>
+            <span class="innovator-detail" style="font-size: 1.45em; font-weight: bold; margin-left: 10px;">Udayshankar Ravikumar</span>
+          </div>
+          <div class="innovator-row"><span class="innovator-icon">🎓</span><span class="innovator-detail"><strong>Class:</strong> 9</span></div>
+          <div class="innovator-row"><span class="innovator-icon">🏫</span><span class="innovator-detail"><strong>School:</strong> Nalanda Public School, Thammanam</span></div>
+          <div class="innovator-row"><span class="innovator-icon">📍</span><span class="innovator-detail"><strong>City:</strong> Thammanam</span></div>
+          <div class="innovator-row"><span class="innovator-icon">🗺️</span><span class="innovator-detail"><strong>State:</strong> Kerala</span></div>
+          <div class="innovator-row"><span class="innovator-icon">🕰️</span><span class="innovator-detail"><strong>Year awarded:</strong> 2023</span></div>
+          <div class="innovator-row"><span class="innovator-icon">🎂</span><span class="innovator-detail"><strong>Age:</strong> 14</span></div>
+          
+        </div>
+        <div class='status-badge' style='background:#FFD600;color:#1e1b4b;padding:7px 20px;border-radius:22px;font-weight:700;display:inline-block;margin-left:16px;'>PoC developed</div>
+      </div>
+    </div>
+    
+  <button class="share-button" onclick="navigator.clipboard.writeText(window.location.href);alert('🔗 Copied the page URL!')">📤 Share This Innovation</button>
   <div class="tabs">
     <button class="tab-button active" onclick="showTab('idea')">💡 Idea</button>
-    <button class="tab-button" onclick="showTab('innovator')">👤 Innovator</button>
     <button class="tab-button" onclick="showTab('learn')">📘 Learn More</button>
+    
   </div>
   <div id="tab-idea" class="tab-content" style="display:block;">
     <div class="card problem">
@@ -130,21 +225,13 @@
       <p>A portable, sensor-based lane reversal system that dynamically opens or closes lanes based on traffic flow, easing congestion without costly infrastructure.</p>
     </div>
   </div>
-  <div id="tab-innovator" class="tab-content">
-    <div class="card">
-      <h2>👤 Udayshankar Ravikumar</h2>
-      <p><strong>🎓 Class:</strong> 9</p>
-      <p><strong>🏫 School:</strong> Nalanda Public School, Thammanam</p>
-      <p><strong>📍 City:</strong> Thammanam</p>
-      <p><strong>🗺️ State:</strong> Kerala</p>
-    </div>
-  </div>
   <div id="tab-learn" class="tab-content">
     <div class="card">
       <h2>📘 Learn More</h2>
       <p>Traffic congestion and blocks occur during rush hour in the morning and evening in cities leading to a great economic loss for the nation and the individual. My invention, Remote Lane Reversal System, solves this issue by increasing the availability of lanes as per the flow of traffic thus reducing the need for costly infrastructure investments.</p><p>The invention, Remote Lane Reversal System, consists of a combination of gates fitted with servo mechanism, electronic road signages with sensors and Time of Flight cameras fitted on the gates, connected together with Internet of Things modules. This entire system is portable and can be placed or removed at any point along the road. The system consists of two such units placed in the middle of the multi lane road, at a distance from each other. As per the traffic needs, a particular contraflow road lane is closed to allow rush hour (commuter) traffic to go through, thereby increasing the availability of lanes to decongest rush hour traffic.</p>
     </div>
   </div>
+  
   <script>
     function showTab(id) {
       document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
